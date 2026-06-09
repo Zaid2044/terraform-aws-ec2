@@ -28,5 +28,10 @@ resource "aws_instance" "this" {
       Name = "${local.name_prefix}-${var.name}-${count.index + 1}"
     }
   )
-}
 
+  lifecycle {
+    ignore_changes = [
+      user_data
+    ]
+  }
+}
