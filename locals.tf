@@ -10,4 +10,8 @@ locals {
     },
     var.tags
   )
+
+  instance_name = "${local.name_prefix}-${var.instance_name}"
+
+  security_group_name = "${local.name_prefix}-${var.instance_name}-sg"
 }
